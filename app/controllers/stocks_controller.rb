@@ -28,17 +28,20 @@
     end
   end
 
+  # Read action
   get '/stocks/:id' do
     @stock = Stock.find(params[:id])
     erb :'stocks/show'
   end
 
+  # Delete helper
   helpers do
     def delete_stock_button(stock_id)
       erb :'stocks/_delete_stock_button', locals: { stock_id: stock_id }
     end
   end
 
+  # Delete action
   delete '/stocks/:id' do
     Stock.find(params[:id]).destroy
     redirect '/stocks'
