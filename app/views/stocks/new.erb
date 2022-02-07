@@ -1,0 +1,13 @@
+<h1><%=@title %></h1>
+<form action="/stocks" method="post" enctype="multipart/form-data">
+  <label for="stock_name">Name:</label>
+  <br />
+  <input id="stock_name" name="stock[name]" type="text" value="<%= @stock.name %>" />
+  <br />
+
+  <label for="stock_description">Description:</label>
+  <br />
+  <textarea id="stock_description" name="stock[description]" rows="5"><%= @stock.description %></textarea>
+  <br />
+  <input type="submit" value="Add stock" />
+</form>

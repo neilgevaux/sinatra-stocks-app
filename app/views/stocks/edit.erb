@@ -1,0 +1,16 @@
+<h1>Edit Idea</h1>
+<form action="/stocks/<%= @stock.id %>" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="_method" value="put" />
+
+  <label for="stock_name">Name:</label>
+  <br />
+  <input id="stock_description" name="stock[name]" type="text" value="<%= @stock.name %>" />
+  <br />
+
+  <label for="stock_description">Description:</label>
+  <br />
+  <textarea id="stock_description" name="stock[description]" rows="5"><%= @stock.description %></textarea>
+  <br />
+
+  <input type="submit" value="Update Idea" />
+</form>
