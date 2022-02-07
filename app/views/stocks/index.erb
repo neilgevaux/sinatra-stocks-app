@@ -1,0 +1,24 @@
+<h1>Stocks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @stocks.each do |stock| %>
+    <tr>
+      <td><%= stock.name %></td>
+      <td><%= stock.description %></td>
+      <td><%= stock.picture.present? %></td>
+      <td><a href="/stocks/<%= stock.id %>/edit">Edit</a></td>
+      <td><a href="/stocks/<%= stock.id %>">Show</a></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<br>
