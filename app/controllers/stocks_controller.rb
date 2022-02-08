@@ -34,6 +34,13 @@
     erb :'stocks/show'
   end
 
+  # Add stock ticker symbol to form and handle errors so form loads with a blank submission
+  get '/new' do
+    if params[:stock][:name]
+      @stocks = StockQuote::Stock.quote("aapl") 
+    end
+  end
+
   # Delete helper
   helpers do
     def delete_stock_button(stock_id)
@@ -68,4 +75,5 @@
     else
       erb :'stocks/edit'
     end
+
   end
