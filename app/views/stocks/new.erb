@@ -1,5 +1,5 @@
 <h1><%=@title %></h1>
-<form action="/stocks" method="post" enctype="multipart/form-data">
+<form action="/stocks" method="post">
   <div class="form-group">
       <label for="stock_name">Name:</label>
       <input id="stock_name" name="stock[name]" type="text" value=" <%= @stock.name %>" class="form-control" />
@@ -10,3 +10,9 @@
   </div>
   <input type="submit" value="Add stock" class="btn btn-primary" />
 </form>
+
+<% StockQuote::Stock.new(api_key:'') %>
+
+<% stock = StockQuote::Stock.quote("aapl") %>
+
+<%= stock.company_name %>
